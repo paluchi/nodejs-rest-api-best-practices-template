@@ -1,0 +1,15 @@
+# package directories
+src/controllers/positions/metrics/parsers/payloads
+node_modules
+jspm_packages
+.DS_Store
+build
+.build
+package-lock.json
+lambdaLayers/lambda-layer-dev/nodejs.zip
+lambdaLayers/lambda-layer-dev/nodejs/node_modules
+.env
+!.env.sample
+
+# Serverless directories
+.serverless
