@@ -1,15 +1,13 @@
 {
-  "name": "cognito-concept-test",
+  "name": "openia_pow",
   "version": "1.0.0",
-  "description": "AWS cognito's users pool concept test",
   "scripts": {
-    "start": "npm run build:docs && node ./build/bin/www",
+    "start": "npm run build && npm run build:docs && node ./build/bin/www",
     "dev": "ts-node-dev ./src/bin/www",
     "build": "ttsc",
-    "build:docs": "set API_DOCUMENTS_FILE=API_docs.json && ttsc && node ./build/documentation/generateDocs.js",
+    "build:docs": "npm run build && set API_DOCUMENTS_FILE=API_docs.json && ttsc && node ./build/documentation/generateDocs.js",
     "test": "jest --coverage",
-    "test:watch": "jest --watch",
-    "loadStrategies": "ttsc && node ./build/scripts/loadStrategies/index"
+    "test:watch": "jest --watch"
   },
   "author": "",
   "license": "ISC",

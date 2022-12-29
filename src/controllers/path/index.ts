@@ -14,4 +14,4 @@ const template_path_method = createMethod(
 
 const methods: exportedMethods = [template_path_method];
 
-export default createController("positions", methods);
+export default createController("path", methods);

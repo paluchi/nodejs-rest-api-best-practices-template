@@ -5,6 +5,7 @@ import {
   createValidationRules,
 } from "../../../libraries/helpers";
 import Joi from "joi";
+import allowAnonymous from "../../../libraries/policies/allowAnonymous";
 
 type IGetSummaryProperties = (params: {
   variable_1: number;
@@ -20,12 +21,12 @@ interface ISucess {
 const validation = createValidationRules({
   resource: "query",
   schema: Joi.object({
-    varfiable_1: Joi.number().required().description("Some number"),
-    varfiable_2: Joi.string().required().description("Some string"),
+    variable_1: Joi.number().required().description("Some number"),
+    variable_2: Joi.string().required().description("Some string"),
   }),
 });
 
-export const get_metrics: IGetSummaryProperties = async ({
+export const template_path: IGetSummaryProperties = async ({
   variable_1,
   variable_2,
 }) => {
@@ -43,10 +44,10 @@ export const get_metrics: IGetSummaryProperties = async ({
   }
 };
 
-const authPolicies = createAuthPolicies([]);
+const authPolicies = createAuthPolicies([allowAnonymous]);
 
-const methodhandler = createMethodHandler<any>(
-  get_metrics,
+const methodhandler = createMethodHandler<ISucess>(
+  template_path,
   authPolicies,
   validation
 );

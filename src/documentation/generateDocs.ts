@@ -1,18 +1,18 @@
 import dotenv from "dotenv";
-import env from "../env";
 
-if (env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV !== "production") {
   dotenv.config();
 }
 
+import env from "../env";
 import routerFactory from "../libraries";
 
 const OpenApiVersion = "3.0.1";
-const title = "Service provider for Quant users.";
-const description =
-  "This API is in charge of providing Quant product´s users the capability of interacting with the full set of Quant applications according to their account properties and request parameters.";
+const title = "template title";
+const description = "template description";
 const version = "0.0.1";
-const url = env.WEB_APP_URL || "https://app.quant.intotheblock.io";
+
+const url = env.WEB_APP_URL || "";
 
 const template = routerFactory.generateApiDocumentationTemplate({
   openApiVersion: OpenApiVersion,
